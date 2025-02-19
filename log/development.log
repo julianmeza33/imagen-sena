@@ -1,0 +1,63 @@
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='MiApi'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-02-19 19:58:34.757183', '2025-02-19 19:58:34.757190') RETURNING "key" /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiApi'*/[0m
+Migrating to CreateAutos (20250219195249)
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "autos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "modelo" varchar, "placa" varchar, "color" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250219195249') RETURNING "version" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+Migrating to CreateCars (20250219195733)
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "cars" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "color" varchar, "placa" varchar, "numllantas" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250219195733') RETURNING "version" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (11.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mCar Create (16.2ms)[0m  [1m[32mINSERT INTO "cars" ("color", "placa", "numllantas", "created_at", "updated_at") VALUES ('azul electrico', 'wpd355', 4, '2025-02-19 20:01:13.774074', '2025-02-19 20:01:13.774074') RETURNING "id" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (15.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mCar Load (3.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiApi'*/[0m
+Migrating to CreatePersonData (20250219200840)
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE TABLE "person_data" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cedula" integer, "nombre" varchar, "edad" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250219200840') RETURNING "version" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (26.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiApi'*/[0m
+Migrating to CreatePeople (20250219201551)
+  [1m[36mTRANSACTION (17.9ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[35m (21.0ms)[0m  [1m[35mCREATE TABLE "people" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cedula" integer, "nombre" varchar, "edad" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250219201551') RETURNING "version" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (42.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (42.5ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mPerson Create (69.4ms)[0m  [1m[32mINSERT INTO "people" ("cedula", "nombre", "edad", "created_at", "updated_at") VALUES (123456, 'julian', 18, '2025-02-19 20:19:59.151901', '2025-02-19 20:19:59.151901') RETURNING "id" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (48.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mPerson Load (1.9ms)[0m  [1m[34mSELECT "people".* FROM "people" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mPerson Create (13.2ms)[0m  [1m[32mINSERT INTO "people" ("cedula", "nombre", "edad", "created_at", "updated_at") VALUES (235132, 'andres', 18, '2025-02-19 20:22:13.579111', '2025-02-19 20:22:13.579111') RETURNING "id" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mPerson Load (8.1ms)[0m  [1m[34mSELECT "people".* FROM "people" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (6.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mCar Create (229.6ms)[0m  [1m[32mINSERT INTO "cars" ("color", "placa", "numllantas", "created_at", "updated_at") VALUES ('rojo pasion', 'wes345', 4, '2025-02-19 20:34:56.019579', '2025-02-19 20:34:56.019579') RETURNING "id" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (64.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mCar Load (17.8ms)[0m  [1m[34mSELECT "cars".* FROM "cars" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (29.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mCar Create (4345.6ms)[0m  [1m[32mINSERT INTO "cars" ("color", "placa", "numllantas", "created_at", "updated_at") VALUES ('amarillo', 'piz545', 6, '2025-02-19 20:53:51.028260', '2025-02-19 20:53:51.028260') RETURNING "id" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (61.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (26.4ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mCar Create (502.6ms)[0m  [1m[32mINSERT INTO "cars" ("color", "placa", "numllantas", "created_at", "updated_at") VALUES ('verde', 'des432', 6, '2025-02-19 21:17:36.094911', '2025-02-19 21:17:36.094911') RETURNING "id" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (28.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mCar Create (21.1ms)[0m  [1m[32mINSERT INTO "cars" ("color", "placa", "numllantas", "created_at", "updated_at") VALUES ('valeciana', 'piz545', 4, '2025-02-19 21:20:23.083762', '2025-02-19 21:20:23.083762') RETURNING "id" /*application='MiApi'*/[0m
+  [1m[36mTRANSACTION (29.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MiApi'*/[0m
+  [1m[36mCar Load (15.8ms)[0m  [1m[34mSELECT "cars".* FROM "cars" /* loading for pp */ LIMIT 11 /*application='MiApi'*/[0m
+  [1m[36mCar Load (2.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."placa" = '5' LIMIT 1 /*application='MiApi'*/[0m
+  [1m[36mCar Load (20.4ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."numllantas" = 4 LIMIT 1 /*application='MiApi'*/[0m
