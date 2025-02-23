@@ -20,6 +20,7 @@ COPY Gemfile Gemfile.lock ./
 
 RUN bundle install
 
+
 COPY . .
 
 EXPOSE 3000
